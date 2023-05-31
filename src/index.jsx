@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import { Buffer } from 'buffer'
+
+import './index.scss'
 
 import App from './App'
 
@@ -14,5 +15,3 @@ ReactDOM
             </BrowserRouter>
         </React.StrictMode>
     )
-
-window.Buffer = Buffer

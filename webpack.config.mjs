@@ -1,68 +1,50 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import CopyWebpackPlugin from 'copy-webpack-plugin'
-import { fileURLToPath } from 'url'
 import path from 'path'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 
-const { loader } = MiniCssExtractPlugin
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-export const entry = './src/index.js'
 
-export const moduleRules = {
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+export const entry = './src/index.jsx'
+
+export const module = {
     rules: [
-        { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'], resolve: { fullySpecified: false } },
-        { test: /\.s[ac]ss$/i, use: [loader, 'css-loader', 'sass-loader'] },
-        { test: /\.css$/i, use: ['style-loader', 'css-loader'] },
-        { test: /\.(png|svg|jpg|jpeg|gif)$/i, type: 'asset/resource' },
-        { test: /\.pdf$/, use: [{ loader: 'file-loader', options: { name: '[path][name].[ext]' } }] }
+        { test: /\.jsx?$/, exclude: /(node_modules|bower_components)/, use: { loader: 'babel-loader', options: { presets: ['@babel/preset-env', '@babel/preset-react'] } } },
+        { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
     ],
 }
 
 export const resolve = {
     extensions: ['.js', '.jsx'],
-    modules: ['src', 'node_modules'],
 }
 
 export const output = {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: 'bundle.js',
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
+}
+
+export const devServer = {
+    static: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 3001,
+    historyApiFallback: true,
 }
 
 export const plugins = [
     new HtmlWebpackPlugin({
         template: './public/index.html',
-        templateParameters: {
-            PUBLIC_URL: process.env.PUBLIC_URL || '',
-        },
-    }),
-    new MiniCssExtractPlugin({
-        filename: 'style.css',
-    }),
-    new CopyWebpackPlugin({
-        patterns: [
-            {
-                from: './public/favicon.ico',
-                to: 'favicon.ico',
-            },
-        ],
+        favicon: './public/favicon.ico',
     }),
 ]
 
-export const devServer = {
-    static: {
-        directory: './dist',
-    },
-    historyApiFallback: true,
-    allowedHosts: ['school.thenolle.com'],
-}
-
 export default {
     entry,
-    module: moduleRules,
+    module,
     resolve,
     output,
-    plugins,
     devServer,
+    plugins,
 }
