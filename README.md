@@ -2,6 +2,13 @@
 
 # ReactJS App Template
 
+---
+
+#### Want the lightweight version ?
+[Click here to get it!](https://github.com/thenolle/reactjs-template/tree/lightweight)
+
+---
+
 #### What is this ReactJS Template?
 
 Tired of creating a new ReactJS project from scratch? Even worse by using create-react-app? Well, this is the template for you! This template is a basic one using Babel, Webpack, React, React Dom, React Router Dom, SCSS, etc. I don't provide custom things, just a base template to replace create react app and to help react developers to use the latest packages.

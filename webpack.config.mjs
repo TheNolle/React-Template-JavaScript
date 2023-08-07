@@ -13,7 +13,8 @@ export const entry = './src/index.jsx'
 export const module = {
     rules: [
         { test: /\.jsx?$/, exclude: /(node_modules|bower_components)/, use: { loader: 'babel-loader', options: { presets: ['@babel/preset-env', '@babel/preset-react'] } } },
-        { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+        { test: /\.(sa|sc|c)ss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+        { test: /\.(png|jpe?g|gif)$/i, use: [{ loader: 'file-loader' }] },
     ],
 }
 
@@ -29,7 +30,7 @@ export const output = {
 export const devServer = {
     static: path.join(__dirname, 'dist'),
     compress: true,
-    port: 3001,
+    port: 3000,
     historyApiFallback: true,
 }
 
