@@ -4,8 +4,8 @@
 
 ---
 
-#### Want the lightweight version ?
-[Click here to get it!](https://github.com/thenolle/reactjs-template/tree/lightweight)
+#### Want the full version ?
+[Click here to get it!](https://github.com/thenolle/reactjs-template)
 
 ---
 
