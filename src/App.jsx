@@ -13,7 +13,7 @@ export default function App() {
         <div className="app-container">
             <header>
                 <h1>React Template</h1>
-                <p>React template with TypeScript, Sass, React Router, and Webpack.</p>
+                <p>React template with Javascript, Sass, React Router, and Webpack.</p>
             </header>
 
             <main>
