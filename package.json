@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.mjs --mode production",
-    "start": "webpack serve --config webpack.config.mjs --mode development --no-cache --port 3000",
+    "start": "webpack serve --config webpack.config.mjs --mode development --no-cache --port 3005",
     "update": "npm install && npm update",
     "pupdate": "pnpm install && pnpm update"
   },

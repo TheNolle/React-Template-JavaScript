@@ -25,13 +25,14 @@ export const resolve = {
 
 export const output = {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
 }
 
 export const devServer = {
     static: path.join(__dirname, 'dist'),
     compress: true,
-    port: 3000,
+    port: 3005,
     historyApiFallback: true,
 }
 
