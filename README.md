@@ -7,7 +7,7 @@
 ---
 
 #### Want the lightweight version ?
-[Click here to get it!](tree/lightweight)
+[Click here to get it!](../../tree/lightweight)
 
 ---
 
