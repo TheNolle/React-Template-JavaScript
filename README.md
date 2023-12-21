@@ -7,7 +7,7 @@
 ---
 
 #### Want the lightweight version ?
-[Click here to get it!](https://github.com/thenolle/reactjs-template/tree/lightweight)
+[Click here to get it!](tree/lightweight)
 
 ---
 
