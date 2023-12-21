@@ -5,7 +5,7 @@
 ---
 
 #### Want the full version ?
-[Click here to get it!](https://github.com/thenolle/reactjs-template)
+[Click here to get it!](../../)
 
 ---
 
